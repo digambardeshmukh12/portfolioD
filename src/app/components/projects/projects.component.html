@@ -1,0 +1,13 @@
+<h1>Projects</h1>
+
+<div class="projects">
+    <div class="project-card" *ngFor="let project of projects">
+        <div class="project-header">
+            <mat-card-title>{{ project.title }}</mat-card-title>
+            <mat-card-subtitle class="subtitle">{{ project.subtitle }}</mat-card-subtitle>
+        </div>
+        <div *ngFor="let item of ensureDescriptionIsArray(project.description)">
+            <span class="description">{{ item }}</span>
+        </div>
+    </div>
+</div>

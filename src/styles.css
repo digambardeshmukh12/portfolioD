@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    color: #ff9800;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  a {
+    color: #ff9800; /* orange accent color */
+  }
+  
+  .section {
+    padding: 80px 20px;
+  }
+  

@@ -1,0 +1,71 @@
+.projects {
+    display: flex;
+    gap: 15px;
+}
+
+ 
+
+
+.project-header {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    font-size: 0.9em;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.scroll-btn.left {
+    left: 10px;
+}
+
+.scroll-btn.right {
+    right: 10px;
+}
+
+
+.subtitle {
+    color: antiquewhite;
+}
+.project-card {
+    position: relative; /* Ensure child elements are positioned relative to this */
+    padding: 20px;
+    max-height: 60px; /* Initial max-height for non-hover state */
+    width: 500px;
+    border-radius: 50px;
+    background: #3b3a3a;
+    box-shadow: 32px -32px 63px #2e2e2e4c, -32px 32px 63px #1b1a1a44;
+    overflow: hidden; /* Hide overflow content */
+    transition: max-height 0.5s ease, box-shadow 0.5s ease; /* Smooth transition */
+}
+
+.project-card:hover {
+    max-height: 600px; /* Large enough to accommodate expanded content */
+    box-shadow: 32px -32px 63px #2e2e2e4c, -32px 32px 63px #1b1a1a44;
+}
+
+.description {
+    color: #dddddd;
+    padding: 10px;
+    width: 100%; /* Ensure it takes full width of the card */
+    opacity: 0;
+    transform: translateY(20px); /* Initial off-screen position */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.project-card:hover .description {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+}

@@ -1,0 +1,42 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+  }
+  
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f1f1f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1000;
+  }
+  
+  .nav-bar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .nav-bar a:hover {
+    color: #ff9800;
+  }
+  
+  .section {
+    padding: 80px 20px;
+    margin-top: 60px; /* To avoid content being hidden behind the fixed nav bar */
+  }
+  
+  .profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+  
