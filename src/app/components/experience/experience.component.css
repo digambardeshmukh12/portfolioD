@@ -7,7 +7,7 @@
      text-align: center; /* Center text inside container */
  }
 .experience-card {
-    background: #1e1e1e;
+    background: linear-gradient(135deg, #d8a639, #000000);
     color: #ffffff;
     border-radius: 12px;
     width: 300px;

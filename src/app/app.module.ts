@@ -9,9 +9,13 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { ContactComponent } from './components/contact/contact.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ScrollAnimationDirective } from './directives/scroll-animation.directive';
+import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { SkillsComponent } from './skills/skills.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +24,19 @@ import { MatButtonModule } from '@angular/material/button';
     ExperienceComponent,
     ContactComponent,
     ResumeComponent,
-    ScrollAnimationDirective
+    ScrollAnimationDirective,
+    SkillsComponent,
+    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    MatChipsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
