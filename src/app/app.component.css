@@ -29,8 +29,8 @@ body {
   }
   
   .section {
-    padding: 80px 20px;
-    margin-top: 60px; /* To avoid content being hidden behind the fixed nav bar */
+    padding:   20px;
+    margin-top: 20px; /* To avoid content being hidden behind the fixed nav bar */
   }
   
   .profile-img {

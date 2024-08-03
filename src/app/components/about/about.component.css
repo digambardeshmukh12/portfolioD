@@ -1,6 +1,6 @@
 .about-container {
   color: #ffffff;
-  background: linear-gradient(135deg, #d8a639, #000000);
+  background: #333333;
   padding: 20px;
   border-radius: 8px;
   margin: 20px;
@@ -18,7 +18,7 @@
 
 .about-title {
   font-size: 2.5em;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #ffffff;
   animation: fadeIn 1.5s ease-in-out;
 }

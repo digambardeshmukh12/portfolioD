@@ -6,7 +6,7 @@
   }
   
   .skill-category {
-    background: linear-gradient(135deg, #d8a639, #000000);
+    background: linear-gradient(135deg, #333333, #000000);
     border-radius: 8px;
     padding: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -23,7 +23,7 @@
     font-weight: bold;
     margin-bottom: 12px;
     text-transform: uppercase;
-    color: #333;
+    color: #d8cb52;
   }
   
   .skills-list {
@@ -43,8 +43,13 @@
   }
   
   .skill-item:hover {
-    background: #d4885994;
+    background: #333333;
     transform: translateY(-4px);
+  }
+
+  .skill-item:hover  .Skill-Name{
+    color: white;
+
   }
   
   .icon-container {

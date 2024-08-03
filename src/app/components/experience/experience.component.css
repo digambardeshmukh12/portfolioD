@@ -7,7 +7,7 @@
      text-align: center; /* Center text inside container */
  }
 .experience-card {
-    background: linear-gradient(135deg, #d8a639, #000000);
+    background: linear-gradient(135deg, #333333, #000000);
     color: #ffffff;
     border-radius: 12px;
     width: 300px;
@@ -40,6 +40,7 @@
     margin: 5px 0;
     font-size: 1.2em;
     font-weight: normal;
+    color: rgb(223, 175, 81) ;
 }
 
 .experience-header p {
