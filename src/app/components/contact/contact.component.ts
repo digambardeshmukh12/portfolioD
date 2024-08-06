@@ -1,5 +1,6 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component } from '@angular/core';
+import emailjs from 'emailjs-com';
 
 @Component({
   selector: 'app-contact',
@@ -15,5 +16,28 @@ import { Component } from '@angular/core';
   ]
 })
 export class ContactComponent {
+  formData = {
+    name: '',
+    email: '',
+    message: ''
+  };
 
+  sendEmail() {
+    const subject = encodeURIComponent('Contact Form Submission');
+    const body = encodeURIComponent(`
+      Name: ${this.formData.name}
+      Email: ${this.formData.email}
+      Message: ${this.formData.message}
+    `);
+
+    const mailtoLink = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+
+    // Optionally, reset the form
+    this.formData = {
+      name: '',
+      email: '',
+      message: ''
+    };
+  }
 }
