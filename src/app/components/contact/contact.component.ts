@@ -1,7 +1,6 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component } from '@angular/core';
-import emailjs from 'emailjs-com';
-
+ 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
