@@ -153,3 +153,21 @@
     }
   }
   
+
+ .snackbar-success {
+  background-color: #4caf50 !important;  
+  color: white !important;
+}
+
+ .snackbar-error {
+  background-color: #f44336 !important; /* red for error */
+  color: white !important;
+}
+
+.snackbar-success, .snackbar-error {
+  transition: background-color 0.3s ease-in-out !important;
+}
+.discription-textaread{
+  height: 100px;
+  resize: none !important;
+}
