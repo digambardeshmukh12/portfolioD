@@ -1,22 +1,55 @@
 <div class="contact-container">
     <h1 class="contact-title">Get in Touch</h1>
-    <div class="contact-form">
-      <form>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name"    [(ngModel)]="formData.name" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" [(ngModel)]="formData.email"  name="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" class="discription-textaread"  name="message" [(ngModel)]="formData.message" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" (click)="sendEmail()" class="submit-button">Send Message</button>
-      </form>
+    <div class="toggle-buttons">
+      <button (click)="toggleForm('contact')" [class.active]="currentForm === 'contact'" class="toggle-button">Contact Me</button>
+      <button (click)="toggleForm('hire')" [class.active]="currentForm === 'hire'" class="toggle-button">Hire Me</button>
     </div>
+    
+    <div class="contact-form">
+      <ng-container *ngIf="currentForm === 'contact'">
+        <div [@slideIn] *ngIf="currentForm === 'contact'">
+          <form (ngSubmit)="sendEmail()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" [(ngModel)]="formData.name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" [(ngModel)]="formData.email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" [(ngModel)]="formData.message" name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+          </form>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="currentForm === 'hire'">
+        <div [@slideOut] *ngIf="currentForm === 'hire'">
+          <form (ngSubmit)="sendQuote()">
+            <div class="form-group">
+              <label for="projectName">Project Name</label>
+              <input type="text" id="projectName" [(ngModel)]="formData.projectName" name="projectName" placeholder="Your Project Name" required>
+            </div>
+            <div class="form-group">
+              <label for="budget">Budget</label>
+              <input type="number" id="budget" [(ngModel)]="formData.budget" name="budget" placeholder="Your Budget" required>
+            </div>
+            <div class="form-group">
+              <label for="details">Project Details</label>
+              <textarea id="details" [(ngModel)]="formData.details" name="details" placeholder="Project Details" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="emailHire">Your Email</label>
+              <input type="email" id="emailHire" [(ngModel)]="formData.hireEmail" name="hireEmail" placeholder="Your Email" required>
+            </div>
+            <button type="submit" class="submit-button">Request Quote</button>
+          </form>
+        </div>
+      </ng-container>
+    </div>
+    
     <div class="contact-info">
       <h2>Contact Information</h2>
       <p>Email: <a href="mailto:digambardeshmukhoffice@gmail.com">digambardeshmukhoffice@gmail.com</a></p>

@@ -11,66 +11,47 @@ import {
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
   animations: [
-    trigger('fadeIn', [
+    trigger('slideIn', [
       transition(':enter', [
-        style({ opacity: 0 }),
-        animate('600ms', style({ opacity: 1 }))
+        style({ opacity: 0, transform: 'translateX(-100%)' }), // Slide in from left
+        animate('0.5s ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+      ]),
+      transition(':leave', [
+        animate('0.5s ease-in', style({ opacity: 0, transform: 'translateX(-100%)' }))
+      ])
+    ]),
+    trigger('slideOut', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(100%)' }), // Slide in from right
+        animate('0.5s ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+      ]),
+      transition(':leave', [
+        animate('0.5s ease-in', style({ opacity: 0, transform: 'translateX(100%)' }))
       ])
     ])
   ]
 })
 export class ContactComponent {
+  currentForm: 'contact' | 'hire' = 'contact';
   formData = {
     name: '',
     email: '',
-    message: ''
+    message: '',
+    projectName: '',
+    budget: '',
+    details: '',
+    hireEmail: ''
   };
 
-  
- 
-  constructor(private _snackBar: MatSnackBar) {}
-
-
-
-
-  openSnackBar(message: string,  responseType: 'S' | 'E') {
-    const panelClass = responseType === 'S' ? 'snackbar-success' : 'snackbar-error';
-    this._snackBar.open(message, 'Close', {
-      horizontalPosition: 'right',
-      verticalPosition: 'top',
-      duration: 3000,  
-      panelClass: [panelClass]  
-    });
+  toggleForm(form: 'contact' | 'hire') {
+    this.currentForm = form;
   }
 
-
   sendEmail() {
-    
-      const serviceID = 'service_xbd7vmg'; // Replace with your EmailJS service ID
-      const templateID = 'template_y2wdo1p'; // Replace with your EmailJS template ID
-      const userID = 'DymUODE7IAA0gvXDW'; // Replace with your EmailJS user ID
+    console.log('Email sent with data:', this.formData);
+  }
 
-      const templateParams = {
-        name: this.formData.name,
-        email: 'digambardeshmukhoffice@gmail.com',
-         message: this.formData.message + " " +  this.formData.email
-      };
-
-      emailjs.send(serviceID, templateID, templateParams, userID)
-        .then((response: EmailJSResponseStatus) => {
-           this.openSnackBar('Email sent successfully!' , 'S');
-           this.formData = {
-            name: '',
-            email: '',
-            message: ''
-          };
-         }, (error) => {
-          this.openSnackBar('Failed to send email!' , 'E')
-          });
-    }
-  
-
-
-
-
+  sendQuote() {
+    console.log('Quote requested with data:', this.formData);
+  }
 }
