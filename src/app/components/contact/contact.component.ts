@@ -47,11 +47,35 @@ export class ContactComponent {
     this.currentForm = form;
   }
 
-  sendEmail() {
-    console.log('Email sent with data:', this.formData);
-  }
+  
 
   sendQuote() {
     console.log('Quote requested with data:', this.formData);
   }
+
+  sendEmail() {
+    
+      const serviceID = 'service_xbd7vmg'; // Replace with your EmailJS service ID
+      const templateID = 'template_y2wdo1p'; // Replace with your EmailJS template ID
+      const userID = 'DymUODE7IAA0gvXDW'; // Replace with your EmailJS user ID
+
+      const templateParams = {
+        name: this.formData.name,
+        email: 'digambardeshmukhoffice@gmail.com',
+         message: this.formData.message + " " +  this.formData.email
+      };
+
+      emailjs.send(serviceID, templateID, templateParams, userID)
+        .then((response: EmailJSResponseStatus) => {
+           this.openSnackBar('Email sent successfully!' , 'S');
+           this.formData = {
+            name: '',
+            email: '',
+            message: ''
+          };
+         }, (error) => {
+          this.openSnackBar('Failed to send email!' , 'E')
+          });
+    }
+  
 }
