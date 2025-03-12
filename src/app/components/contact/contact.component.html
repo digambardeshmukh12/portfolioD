@@ -27,7 +27,7 @@
       </ng-container>
       <ng-container *ngIf="currentForm === 'hire'">
         <div [@slideOut] *ngIf="currentForm === 'hire'">
-          <form (ngSubmit)="sendQuote()">
+          <form (ngSubmit)="sendEmail()">
             <div class="form-group">
               <label for="projectName">Project Name</label>
               <input type="text" id="projectName" [(ngModel)]="formData.projectName" name="projectName" placeholder="Your Project Name" required>

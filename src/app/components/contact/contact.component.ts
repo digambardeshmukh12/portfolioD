@@ -50,8 +50,8 @@ export class ContactComponent {
   }
 
 
-  sendEmail() {
-
+  sendEmail() { 
+    debugger
     const serviceID = 'service_xbd7vmg'; // Replace with your EmailJS service ID
     const templateID = 'template_y2wdo1p'; // Replace with your EmailJS template ID
     const userID = 'DymUODE7IAA0gvXDW'; // Replace with your EmailJS user ID
@@ -59,11 +59,12 @@ export class ContactComponent {
     const templateParams = {
       name: this.formData.name,
       email: 'digambardeshmukhoffice@gmail.com',
-      message: this.formData.message + " " + this.formData.email
+      message: this.formData.message + " " + this.formData.email + " ALL OBJ " + this.formData
     };
 
     emailjs.send(serviceID, templateID, templateParams, userID)
       .then((response: EmailJSResponseStatus) => {
+        debugger
         this.openSnackBar('Email sent successfully!', 'S');
         this.formData = {
           name: '',
